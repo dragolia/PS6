@@ -50,7 +50,35 @@ public class Person_Test {
 		person1.setPostalCode(21921);
 		
 	}
+	@Test
+	public void AddPerson(){
+		PersonDAL.addPerson(person1);
+	}
+	@Test
+	public void GetPersons(){
+		PersonDAL.getPersons();
+	}
+	@Test
+	public void GetPerson(){
+		PersonDAL.getPerson(person1UUID);
+	}
+	@Test
+	public void deletePerson(){
+		PersonDAL.deletePerson(person1UUID);
+	}
+	@Test
+	public void UpdatePerson(){
+		PersonDAL.updatePerson(person1);
+	}
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+		PersonDAL.deletePerson(person1UUID);
+	}
 	
+	
+	
+	
+
 	
 
 }
